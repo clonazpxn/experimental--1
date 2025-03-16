@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Cargar el componente de la navbar
   fetch('components/navbar.html')
     .then(response => response.text())
     .then(data => {
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error('Error cargando navbar:', error));
   
-  // Cargar el componente del footer
   fetch('components/footer.html')
     .then(response => response.text())
     .then(data => {
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastScrollTop = scrollContainer.scrollTop;
   let isBouncing = false;
 
-  // Efecto elástico
   scrollContainer.addEventListener('wheel', (e) => {
     if (isBouncing) return;
     const scrollTop = scrollContainer.scrollTop;
@@ -46,10 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   }
 
-  // Ocultar/mostrar la navbar según el scroll
   scrollContainer.addEventListener('scroll', () => {
     let currentScroll = scrollContainer.scrollTop;
-    // Re-seleccionar la navbar (ya cargada)
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
     
