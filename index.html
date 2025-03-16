@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Contenedor de la Navbar (se carga dinámicamente) -->
+  <div id="navbar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="scroll-container">
+    <h1>Bienvenido a Mi Página</h1>
+    <p>Esta es una página con Material Design 3 y efectos interactivos.</p>
+    
+    <!-- Tarjetas -->
+    <div class="card-container">
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">Tarjeta 1</div>
+      </div>
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">Tarjeta 2</div>
+      </div>
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">Tarjeta 3</div>
+      </div>
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">Tarjeta 4</div>
+      </div>
+      <!-- Se agregaron dos tarjetas más en Windows.html -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Mi Página Web - Todos los derechos reservados.</p>
+    <p>Licencia: Creative Commons BY-NC-SA 4.0</p>
+  </footer>
+
+  <!-- Carga dinámica de la navbar y luego inyección de md3.js -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-container").innerHTML = data;
+          // Inyectamos el script md3.js después de cargar la navbar
+          setTimeout(() => {
+            const script = document.createElement("script");
+            script.src = "js/md3.js";
+            document.body.appendChild(script);
+          }, 100);
+        });
+    });
+  </script>
+</body>
+</html>
