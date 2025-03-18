@@ -4,55 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Página Web</title>
+  <!-- Estilos, Material Icons y Google Fonts -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- Navbar fija -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="nav-button">
+          <span class="material-icons">home</span>
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-button">
+          <span class="material-icons">info</span>
+          Acerca
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-button">
+          <span class="material-icons">photo</span>
+          Galería
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-button">
+          <span class="material-icons">contact_mail</span>
+          Contacto
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  <div id="navbar-container"></div>
+  <!-- Contenedor principal -->
+  <div class="main-container">
+    <h1>Bienvenido a mi Página</h1>
+    <p>Esta es una página con Material Design 3 y efectos modernos.</p>
 
-  <main class="scroll-container">
-    <h1>Bienvenido a Mi Página</h1>
-    <p>Esta es una página con Material Design 3 y efectos interactivos.</p>
-
+    <!-- Contenedor de tarjetas centrado -->
     <div class="card-container">
       <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">Tarjeta 1</div>
+        <div class="card-image">
+          <img src="img/img-1.png" alt="Imagen Tarjeta 1">
+        </div>
+        <div class="card-content">
+          <h3>Tarjeta 1</h3>
+          <p>Descripción de la tarjeta.</p>
+        </div>
       </div>
+
       <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">Tarjeta 2</div>
+        <div class="card-image">
+          <img src="img/img-1.png" alt="Imagen Tarjeta 2">
+        </div>
+        <div class="card-content">
+          <h3>Tarjeta 2</h3>
+          <p>Descripción de la tarjeta.</p>
+        </div>
       </div>
+
       <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">Tarjeta 3</div>
+        <div class="card-image">
+          <img src="img/img-1.png" alt="Imagen Tarjeta 3">
+        </div>
+        <div class="card-content">
+          <h3>Tarjeta 3</h3>
+          <p>Descripción de la tarjeta.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">Tarjeta 4</div>
-      </div>
+      <!-- Puedes agregar más tarjetas -->
     </div>
-  </main>
+  </div>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Mi Página Web - Todos los derechos reservados.</p>
-    <p>Licencia: Creative Commons BY-NC-SA 4.0</p>
+    <p>© 2025 Mi Página Web - Todos los derechos reservados | Licencia MIT</p>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("components/navbar.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("navbar-container").innerHTML = data;
-          
-          setTimeout(() => {
-            const script = document.createElement("script");
-            script.src = "js/md3.js";
-            document.body.appendChild(script);
-          }, 100);
-        });
-    });
-  </script>
 </body>
 </html>
